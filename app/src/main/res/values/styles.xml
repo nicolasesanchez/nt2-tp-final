@@ -8,4 +8,36 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="clients">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">35sp</item>
+        <item name="android:textColor">@color/clients</item>
+        <item name="android:text">@string/clients</item>
+    </style>
+
+    <style name="products">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">35sp</item>
+        <item name="android:textColor">@color/products</item>
+        <item name="android:text">@string/products</item>
+    </style>
+
+    <style name="zones">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">35sp</item>
+        <item name="android:textColor">@color/zones</item>
+        <item name="android:text">@string/zones</item>
+    </style>
+
+    <style name="orders">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">35sp</item>
+        <item name="android:textColor">@color/orders</item>
+        <item name="android:text">@string/orders</item>
+    </style>
+
 </resources>
