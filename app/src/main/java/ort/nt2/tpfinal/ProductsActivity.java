@@ -1,14 +1,16 @@
 package ort.nt2.tpfinal;
 
 import android.app.ListActivity;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.ListView;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 import ort.nt2.tpfinal.adapters.ProductAdapter;
 import ort.nt2.tpfinal.entities.Product;
+import ort.nt2.tpfinal.sql.SQLiteHelper;
 
 public class ProductsActivity extends ListActivity {
     private ListView listView;
@@ -27,18 +29,18 @@ public class ProductsActivity extends ListActivity {
     }
 
     private List<Product> getStock() {
-        return Arrays.asList(
-                new Product("Galletitas sin gluten", 100),
-                new Product("Yerba Organica", 130),
-                new Product("Hamburguesas V", 200),
-                new Product("Tofu", 220),
-                new Product("Queso Descremado", 150),
-                new Product("Vino Organico", 500),
-                new Product("Aceite oliva 2lt", 310),
-                new Product("Te Matcha Organico", 700),
-                new Product("Helado Vegano", 110),
-                new Product("Almidon Mandioca 1kg", 190)
-        );
+        Cursor cursor = SQLiteHelper.getInstance(this).getReadableDatabase().rawQuery("select * from product", new String[]{});
+
+        ArrayList<Product> products = new ArrayList<>();
+
+        while (cursor.moveToNext()) {
+            String name = cursor.getString(cursor.getColumnIndex("name"));
+            float price = cursor.getFloat(cursor.getColumnIndex("price"));
+
+            products.add(new Product(name, price));
+        }
+
+        return products;
     }
 
 }

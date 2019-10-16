@@ -1,16 +1,32 @@
 package ort.nt2.tpfinal;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import ort.nt2.tpfinal.sql.SQLiteHelper;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
+        SQLiteHelper sqlHelper = SQLiteHelper.getInstance(this);
+        sqlHelper.onUpgrade(sqlHelper.getWritableDatabase(), 1, 2);
+//        sqlHelper.onCreate(sqlHelper.getWritableDatabase());
+
+        // sqlHelper.getWritableDatabase() // TODO returns un SQLiteDatabase
+        // sqlHelper.getReadableDatabase() // TODO returns un SQLiteDatabase
+
+        // TODO usar siempre SQLiteDatabasequery, la otra forma es conveniente si uso alias (SQLiteQueryBuilder) el objeto que devuelve es similar a un ResultSet
+
+        // TODO revisar clse Esquema y Contrato
+
+        // TODO para hacer un insert obtener un writable, crear un ContenValues(es un mapish) y el método es insert()
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 

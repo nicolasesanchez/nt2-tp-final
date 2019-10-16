@@ -39,7 +39,7 @@ public class ProductAdapter extends ArrayAdapter<Product> {
         name.setPadding(10, 10, 0, 10);
 
         TextView qty = (TextView) listProduct.findViewById(R.id.product_stock);
-        qty.setText(String.valueOf(currentProduct.qty));
+        qty.setText(String.valueOf(currentProduct.price));
         qty.setPadding(0, 10, 10, 10);
 
         return listProduct;

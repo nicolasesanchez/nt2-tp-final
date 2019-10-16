@@ -2,10 +2,10 @@ package ort.nt2.tpfinal.entities;
 
 public class Product {
     public String name;
-    public long qty;
+    public float price;
 
-    public Product(String name, long initialQty) {
+    public Product(String name, float initialQty) {
         this.name = name;
-        qty = initialQty;
+        price = initialQty;
     }
 }
