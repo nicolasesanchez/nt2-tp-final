@@ -24,12 +24,12 @@
         <item name="android:text">@string/products</item>
     </style>
 
-    <style name="zones">
+    <style name="sellers">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">35sp</item>
-        <item name="android:textColor">@color/zones</item>
-        <item name="android:text">@string/zones</item>
+        <item name="android:textColor">@color/sellers</item>
+        <item name="android:text">@string/sellers</item>
     </style>
 
     <style name="orders">
