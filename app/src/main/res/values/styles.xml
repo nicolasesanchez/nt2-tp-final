@@ -24,12 +24,12 @@
         <item name="android:text">@string/products</item>
     </style>
 
-    <style name="sellers">
+    <style name="profile">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">35sp</item>
-        <item name="android:textColor">@color/sellers</item>
-        <item name="android:text">@string/sellers</item>
+        <item name="android:textColor">@color/profile</item>
+        <item name="android:text">@string/profile</item>
     </style>
 
     <style name="orders">
