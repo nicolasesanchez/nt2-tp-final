@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         // TODO revisar clse Esquema y Contrato
 
-        // TODO para hacer un insert obtener un writable, crear un ContenValues(es un mapish) y el método es insert()
+        // TODO para hacer un insert btener un writable, crear un ContenValues(es un mapish) y el método es insert()
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
