@@ -35,7 +35,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="111dp"
-        android:layout_marginBottom="84dp"
         android:onClick="save"
         android:text="@string/saveButton"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -43,13 +42,13 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profile_addres"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.674" />
 
     <EditText
         android:id="@+id/profile_zone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="24dp"
         android:ems="10"
         android:hint="@string/zone"
         android:inputType="textPersonName"
@@ -60,7 +59,7 @@
         android:id="@+id/profile_addres"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="24dp"
         android:ems="10"
         android:hint="@string/address"
         android:inputType="textPersonName"
@@ -71,7 +70,7 @@
         android:id="@+id/profile_mail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="24dp"
         android:ems="10"
         android:hint="Email"
         android:inputType="textPersonName"
