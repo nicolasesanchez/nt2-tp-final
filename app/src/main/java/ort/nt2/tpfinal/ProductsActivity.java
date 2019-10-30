@@ -22,22 +22,24 @@ public class ProductsActivity extends ListActivity {
         setContentView(R.layout.products_list);
 
         listView = (ListView) findViewById(android.R.id.list);
-        List<Product> moviesList = getStock();
+        List<Product> moviesList = getProducts();
 
         productAdapter = new ProductAdapter(this, moviesList);
         listView.setAdapter(productAdapter);
     }
 
-    private List<Product> getStock() {
-        Cursor cursor = SQLiteHelper.getInstance(this).getReadableDatabase().rawQuery("select * from product", new String[]{});
+    private List<Product> getProducts() {
+        Cursor cursor = SQLiteHelper.getInstance(this).getReadableDatabase().rawQuery("select p.id, p.name, p.price, s.available_quantity stock from product p join stock s on p.id = s.product_id", new String[]{});
 
         ArrayList<Product> products = new ArrayList<>();
 
         while (cursor.moveToNext()) {
+            System.out.println("DEBUG ±±± product_id="+cursor.getInt(cursor.getColumnIndex("id")));
             String name = cursor.getString(cursor.getColumnIndex("name"));
             float price = cursor.getFloat(cursor.getColumnIndex("price"));
+            int stock = cursor.getInt(cursor.getColumnIndex("stock"));
 
-            products.add(new Product(name, price));
+            products.add(new Product(name, price, stock));
         }
 
         return products;

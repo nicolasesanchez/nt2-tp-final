@@ -35,11 +35,15 @@ public class ProductAdapter extends ArrayAdapter<Product> {
         Product currentProduct = productList.get(position);
 
         TextView name = (TextView) listProduct.findViewById(R.id.product_name);
-        name.setText(currentProduct.name);
+        name.setText(currentProduct.getName());
         name.setPadding(10, 10, 0, 10);
 
         TextView qty = (TextView) listProduct.findViewById(R.id.product_stock);
-        qty.setText(String.valueOf(currentProduct.price));
+        qty.setText(String.valueOf(currentProduct.getStock()));
+        qty.setPadding(0, 10, 0, 10);
+
+        TextView price = (TextView) listProduct.findViewById(R.id.product_price);
+        price.setText(String.valueOf(currentProduct.getPrice()));
         qty.setPadding(0, 10, 10, 10);
 
         return listProduct;
