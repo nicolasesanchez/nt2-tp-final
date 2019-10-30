@@ -8,4 +8,8 @@
     <string name="profile">Profile</string>
 
     <string name="orders">Orders</string>
+    <string name="name">Name and surname</string>
+    <string name="saveButton">Save</string>
+    <string name="zone">Zone</string>
+    <string name="address">Address</string>
 </resources>
