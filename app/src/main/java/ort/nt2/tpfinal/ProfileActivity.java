@@ -1,5 +1,6 @@
 package ort.nt2.tpfinal;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -48,6 +49,9 @@ public class ProfileActivity extends AppCompatActivity {
         ed.putString("address", etAddress.getText().toString());
         ed.putString("birthday", etBirthDate.getText().toString());
 
-        ed.commit();
+        ed.apply();
+
+        Intent home = new Intent(ProfileActivity.this, MainActivity.class);
+        startActivity(home);
     }
 }
