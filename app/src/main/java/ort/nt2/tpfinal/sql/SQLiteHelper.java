@@ -32,8 +32,10 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         db.execSQL("create table orders (" +
                 "id INTEGER primary key AUTOINCREMENT not null," +
                 "client_id int not null," +
-                "seller_id int not null," +
-                "product_id int not null)");
+//                "seller_id int not null," +
+                "product_id int not null," +
+                "foreign key(client_id) references client(id)," +
+                "foreign key (product_id) references product(id))");
 
         db.execSQL("create table product (" +
                 "id INTEGER primary key AUTOINCREMENT not null," +
@@ -41,9 +43,10 @@ public class SQLiteHelper extends SQLiteOpenHelper {
                 "price decimal not null)");
 
         db.execSQL("create table stock (" +
-                "product_id INTEGER primary key AUTOINCREMENT not null," +
-                "id int not null," +
-                "available_quantity int not null)");
+                "product_id int not null," +
+                "id INTEGER primary key AUTOINCREMENT not null," +
+                "available_quantity int not null," +
+                "foreign key(product_id) references product(id))");
 
         db.execSQL("create table seller (" +
                 "id INTEGER primary key AUTOINCREMENT not null," +
@@ -60,9 +63,16 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         db.execSQL("insert into product (name, price)" +
                 "values ('Galletitas sin gluten', '100')," +
                 "('Yerba organica', '130')," +
-                "('Hamburguesas', '200')," +
+                "('Alfajores', '200')," +
                 "('Tofu', '220')," +
                 "('Queso descremado', '150')");
+
+        db.execSQL("insert into stock (product_id, available_quantity)" +
+                "values (1, 12)," +
+                "(2, 23)," +
+                "(3, 12)," +
+                "(4, 2)," +
+                "(5, 0)");
     }
 
     @Override
