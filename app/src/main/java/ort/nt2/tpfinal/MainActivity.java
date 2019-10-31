@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         // TODO revisar clse Esquema y Contrato
 
-        // TODO para hacer un insert obtener un writable, crear un ContenValues(es un mapish) y el método es insert()
+        // TODO para hacer un insert btener un writable, crear un ContenValues(es un mapish) y el método es insert()
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -43,6 +43,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, OrdersActivity.class));
+            }
+        });
+
+        btn = (Button) findViewById(R.id.profile);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ProfileActivity.class));
             }
         });
     }
