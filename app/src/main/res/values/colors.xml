@@ -8,4 +8,8 @@
     <color name="products">#FFFFFF</color>
     <color name="profile">#FFFFFF</color>
     <color name="orders">#FFFFFF</color>
+    <color name="letraNegra">#221F1F</color>
+    <color name="botonOrders">#FF5722</color>
+
+
 </resources>

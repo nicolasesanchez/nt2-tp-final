@@ -33,7 +33,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
                 "id INTEGER primary key AUTOINCREMENT not null," +
                 "client_id int not null," +
                 "seller_id int not null," +
-                "product_id int not null)");
+                "orders_product_id int not null)");
 
         db.execSQL("create table product (" +
                 "id INTEGER primary key AUTOINCREMENT not null," +
@@ -63,6 +63,26 @@ public class SQLiteHelper extends SQLiteOpenHelper {
                 "('Hamburguesas', '200')," +
                 "('Tofu', '220')," +
                 "('Queso descremado', '150')");
+
+        db.execSQL("insert into client (name, last_name)"+
+                "values('Pepito', 'Gonzalez'),"+
+                "('Juancito', 'Ramirez'),"+
+                "('Fulanito', 'Gomez')");
+
+        db.execSQL("insert into seller (name, last_name, zone)"+
+                "values('Martin', 'Tablada','Belgrano'),"+
+                "('Segundo', 'Sanders','Boedo'),"+
+                "('Ignacio', 'Bustamante','Saavedra')");
+
+        db.execSQL("insert into orders (client_id, seller_id, orders_product_id)"+
+                "values('1', '1', '1'),"+
+                "('2',  '2', '2'),"+
+                "('3', '3', '3')");
+
+        db.execSQL("insert into orders_product (product_id, orders_id, quantity)"+
+                "values('1', '1', '5'),"+
+                "('2', '2', '4'),"+
+                "('3', '3', '7')");
     }
 
     @Override
