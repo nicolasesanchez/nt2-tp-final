@@ -26,6 +26,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table client (" +
                 "id INTEGER primary key AUTOINCREMENT not null," +
+                "dni int not null," +
                 "name varchar not null," +
                 "last_name varchar not null)");
 
@@ -73,6 +74,11 @@ public class SQLiteHelper extends SQLiteOpenHelper {
                 "(3, 12)," +
                 "(4, 2)," +
                 "(5, 0)");
+
+        db.execSQL("insert into client (name, last_name, dni)" +
+                "values('Pepito', 'Gonzalez', 23857338)," +
+                "('Juancito', 'Ramirez', 30949382)," +
+                "('Fulanito', 'Gomez', 34000299)");
     }
 
     @Override
