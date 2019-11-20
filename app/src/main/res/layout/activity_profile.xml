@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".ProfileActivity">
+
+        <ImageButton
+            android:id="@+id/profile_imageButton"
+            android:layout_width="112dp"
+            android:layout_height="116dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:contentDescription="profile image"
+            android:onClick="openCamera"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/ic_input_add" />
+
+        <EditText
+            android:id="@+id/profile_etname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="36dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/name"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toEndOf="@+id/profile_imageButton"
+            app:layout_constraintTop_toTopOf="@+id/profile_imageButton" />
+
+        <Button
+            android:id="@+id/profile_saveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="111dp"
+            android:onClick="save"
+            android:text="@string/saveButton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profile_addres"
+            app:layout_constraintVertical_bias="0.674" />
+
+        <EditText
+            android:id="@+id/profile_zone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:ems="10"
+            android:hint="@string/zone"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="@+id/profile_mail"
+            app:layout_constraintTop_toBottomOf="@+id/profile_mail" />
+
+        <EditText
+            android:id="@+id/profile_addres"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:ems="10"
+            android:hint="@string/address"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="@+id/profile_zone"
+            app:layout_constraintTop_toBottomOf="@+id/profile_zone" />
+
+        <EditText
+            android:id="@+id/profile_mail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:ems="10"
+            android:hint="Email"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="@+id/profile_birthDate"
+            app:layout_constraintTop_toBottomOf="@+id/profile_birthDate" />
+
+        <EditText
+            android:id="@+id/profile_birthDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="84dp"
+            android:clickable="true"
+            android:ems="10"
+            android:focusable="false"
+            android:hint="Fecha de nacimiento"
+            android:inputType="date"
+            android:maxLines="1"
+            app:layout_constraintStart_toStartOf="@+id/profile_imageButton"
+            app:layout_constraintTop_toBottomOf="@+id/profile_imageButton" />
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

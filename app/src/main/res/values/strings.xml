@@ -2,6 +2,7 @@
     <string name="app_name">Ventas Mobile</string>
 
     <string name="clients">Clients</string>
+    <string name="new_client">Add new Client</string>
 
     <string name="products">Products</string>
 
@@ -19,6 +20,8 @@
 
     <string name="crearOrden"> Crear Orden </string>
 
-
-
+    <string name="name">Name and surname</string>
+    <string name="saveButton">Save</string>
+    <string name="zone">Zone</string>
+    <string name="address">Address</string>
 </resources>

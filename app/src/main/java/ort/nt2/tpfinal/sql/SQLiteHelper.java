@@ -26,14 +26,26 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table client (" +
                 "id INTEGER primary key AUTOINCREMENT not null," +
+                "dni int not null," +
                 "name varchar not null," +
                 "last_name varchar not null)");
 
+       /* db.execSQL("create table orders (" +
+                "id INTEGER primary key AUTOINCREMENT not null," +
+                "client_id int not null," +
+                "seller_id int not null," +
+                "orders_product_id int not null)");
+//                "seller_id int not null," +
+        "product_id int not null," +
+                TODO be careful with this
+*/
         db.execSQL("create table orders (" +
                 "id INTEGER primary key AUTOINCREMENT not null," +
                 "client_id int not null," +
                 "seller_id int not null," +
                 "orders_product_id int not null)");
+                /*"foreign key(client_id) references client(id)," +
+                "foreign key (product_id) references product(id))");*/
 
         db.execSQL("create table product (" +
                 "id INTEGER primary key AUTOINCREMENT not null," +
@@ -41,9 +53,10 @@ public class SQLiteHelper extends SQLiteOpenHelper {
                 "price decimal not null)");
 
         db.execSQL("create table stock (" +
-                "product_id INTEGER primary key AUTOINCREMENT not null," +
-                "id int not null," +
-                "available_quantity int not null)");
+                "product_id int not null," +
+                "id INTEGER primary key AUTOINCREMENT not null," +
+                "available_quantity int not null," +
+                "foreign key(product_id) references product(id))");
 
         db.execSQL("create table seller (" +
                 "id INTEGER primary key AUTOINCREMENT not null," +
@@ -60,29 +73,36 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         db.execSQL("insert into product (name, price)" +
                 "values ('Galletitas sin gluten', '100')," +
                 "('Yerba organica', '130')," +
-                "('Hamburguesas', '200')," +
+                "('Alfajores', '200')," +
                 "('Tofu', '220')," +
                 "('Queso descremado', '150')");
 
-        db.execSQL("insert into client (name, last_name)"+
-                "values('Pepito', 'Gonzalez'),"+
-                "('Juancito', 'Ramirez'),"+
-                "('Fulanito', 'Gomez')");
-
-        db.execSQL("insert into seller (name, last_name, zone)"+
-                "values('Martin', 'Tablada','Belgrano'),"+
-                "('Segundo', 'Sanders','Boedo'),"+
+        db.execSQL("insert into seller (name, last_name, zone)" +
+                "values('Martin', 'Tablada','Belgrano')," +
+                "('Segundo', 'Sanders','Boedo')," +
                 "('Ignacio', 'Bustamante','Saavedra')");
 
-        db.execSQL("insert into orders (client_id, seller_id, orders_product_id)"+
-                "values('1', '1', '1'),"+
-                "('2',  '2', '2'),"+
+        db.execSQL("insert into orders (client_id, seller_id, orders_product_id)" +
+                "values('1', '1', '1')," +
+                "('2',  '2', '2')," +
                 "('3', '3', '3')");
 
-        db.execSQL("insert into orders_product (product_id, orders_id, quantity)"+
-                "values('1', '1', '5'),"+
-                "('2', '2', '4'),"+
+        db.execSQL("insert into orders_product (product_id, orders_id, quantity)" +
+                "values('1', '1', '5')," +
+                "('2', '2', '4')," +
                 "('3', '3', '7')");
+
+        db.execSQL("insert into stock (product_id, available_quantity)" +
+                "values (1, 12)," +
+                "(2, 23)," +
+                "(3, 12)," +
+                "(4, 2)," +
+                "(5, 0)");
+
+        db.execSQL("insert into client (name, last_name, dni)" +
+                "values('Pepito', 'Gonzalez', 23857338)," +
+                "('Juancito', 'Ramirez', 30949382)," +
+                "('Fulanito', 'Gomez', 34000299)");
     }
 
     @Override

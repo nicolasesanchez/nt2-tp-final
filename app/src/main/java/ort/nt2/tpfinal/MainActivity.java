@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         // TODO revisar clse Esquema y Contrato
 
-        // TODO para hacer un insert obtener un writable, crear un ContenValues(es un mapish) y el método es insert()
+        // TODO para hacer un insert btener un writable, crear un ContenValues(es un mapish) y el método es insert()
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -39,17 +39,33 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Button btn2 = (Button) findViewById(R.id.orders);
-        /*btn2.setOnClickListener(new View.OnClickListener() {
+        btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,OrdersActivity.class);
-                 startActivity(intent);
+                Intent intent = new Intent(MainActivity.this, OrdersActivity.class);
+                startActivity(intent);
             }
-        });*/
+        });
+
+        btn = (Button) findViewById(R.id.profile);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+            }
+        });
+
+        btn = (Button) findViewById(R.id.clients);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ClientActivity.class));
+            }
+        });
     }
 
-    public void goToOrder(View v){
-        Intent intent = new Intent(MainActivity.this,OrdersActivity.class);
+    public void goToOrder(View v) {
+        Intent intent = new Intent(MainActivity.this, OrdersActivity.class);
         startActivity(intent);
     }
 

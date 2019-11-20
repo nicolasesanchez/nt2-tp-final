@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/product_name"
+        android:id="@+id/client_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="end|left"
@@ -12,19 +12,12 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/product_stock"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textSize="16sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/product_price"
+        android:id="@+id/client_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="end|right"
         android:textSize="16sp"
         android:textStyle="bold" />
+
 
 </RelativeLayout>
