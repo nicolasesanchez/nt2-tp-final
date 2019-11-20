@@ -5,17 +5,11 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.ListView;
 
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import ort.nt2.tpfinal.adapters.OdersAdapter;
-import ort.nt2.tpfinal.adapters.ProductAdapter;
 import ort.nt2.tpfinal.entities.Orders;
-import ort.nt2.tpfinal.entities.Orders_product;
-import ort.nt2.tpfinal.entities.Product;
 import ort.nt2.tpfinal.sql.SQLiteHelper;
 
 public class OrdersActivity extends ListActivity {
@@ -48,8 +42,6 @@ public class OrdersActivity extends ListActivity {
         }
 
         return orders;
-
-
     }
 
 }
