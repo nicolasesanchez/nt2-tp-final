@@ -53,5 +53,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, ProfileActivity.class));
             }
         });
+
+        btn = (Button) findViewById(R.id.clients);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ClientActivity.class));
+            }
+        });
     }
 }
