@@ -31,6 +31,8 @@
         </provider>
 
 
+        <activity android:name=".OrdersActivity">
+        </activity>
     </application>
 
     <uses-permission
