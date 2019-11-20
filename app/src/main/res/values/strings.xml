@@ -8,4 +8,12 @@
     <string name="profile">Profile</string>
 
     <string name="orders">Orders</string>
+
+    <string name="client">Cliente</string>
+
+    <string name="client_Name">Nombre Cliente</string>
+
+    <string name="product">Producto</string>
+
+    <string name="load">Cargar</string>
 </resources>
