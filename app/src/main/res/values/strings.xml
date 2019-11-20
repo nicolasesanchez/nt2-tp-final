@@ -8,6 +8,7 @@
     <string name="profile">Profile</string>
 
     <string name="orders">Orders</string>
+<<<<<<< HEAD
 
     <string name="client">Cliente</string>
 
@@ -16,4 +17,10 @@
     <string name="product">Producto</string>
 
     <string name="load">Cargar</string>
+=======
+    <string name="name">Name and surname</string>
+    <string name="saveButton">Save</string>
+    <string name="zone">Zone</string>
+    <string name="address">Address</string>
+>>>>>>> b66e3b817b98214e07f813d73ea230219b5b11f2
 </resources>

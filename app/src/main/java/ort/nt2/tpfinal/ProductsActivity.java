@@ -34,7 +34,6 @@ public class ProductsActivity extends ListActivity {
         ArrayList<Product> products = new ArrayList<>();
 
         while (cursor.moveToNext()) {
-            System.out.println("DEBUG ±±± product_id="+cursor.getInt(cursor.getColumnIndex("id")));
             String name = cursor.getString(cursor.getColumnIndex("name"));
             float price = cursor.getFloat(cursor.getColumnIndex("price"));
             int stock = cursor.getInt(cursor.getColumnIndex("stock"));
