@@ -38,12 +38,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btn = (Button) findViewById(R.id.orders);
-        btn.setOnClickListener(new View.OnClickListener() {
+        Button btn2 = (Button) findViewById(R.id.orders);
+        /*btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, OrdersActivity.class));
+                Intent intent = new Intent(MainActivity.this,OrdersActivity.class);
+                 startActivity(intent);
             }
-        });
+        });*/
     }
+
+    public void goToOrder(View v){
+        Intent intent = new Intent(MainActivity.this,OrdersActivity.class);
+        startActivity(intent);
+    }
+
 }
