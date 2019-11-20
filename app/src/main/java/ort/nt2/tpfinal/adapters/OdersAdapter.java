@@ -20,7 +20,7 @@ public class OdersAdapter extends ArrayAdapter<Orders> {
     private List<Orders> orderList;
 
     public OdersAdapter(@NonNull Context context, @LayoutRes List<Orders> list) {
-        super(context,0,list);
+        super(context, 0, list);
         mContext = context;
         orderList = list;
     }
@@ -42,15 +42,17 @@ public class OdersAdapter extends ArrayAdapter<Orders> {
 
     @NonNull
     @Override
-
-
     public View getView(int i, View view, ViewGroup viewGroup) {
+        view = LayoutInflater.from(mContext).inflate(R.layout.ordersitmelist, null);
 
-        view= LayoutInflater.from(mContext).inflate(R.layout.ordersitmelist,null);
-        TextView pedidoHecho= (TextView) view.findViewById(R.id.pedidoHechoDefault);
+        // TODO revisar porque no pasa por acá
+
+        Orders currentOrder = orderList.get(i);
+
+//        TextView pedidoHecho = (TextView) view.findViewById(R.id.pedidoHechoDefault);
         TextView idCliente = (TextView) view.findViewById(R.id.IdCliente);
-        Orders item= (Orders) getItem(i);
-        idCliente.setText(item.getClient_id());
+        idCliente.setText(currentOrder.getClient_id());
+
         return view;
 
     }

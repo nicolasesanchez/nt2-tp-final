@@ -28,7 +28,7 @@ public class OrdersActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.orders_list);
 
-        listView = (ListView) findViewById(R.id.listOrders);
+        listView = (ListView) findViewById(android.R.id.list);
         List<Orders> movesOrderList = getOrders();
 
         ordersAdapter = new OdersAdapter(this, movesOrderList);
@@ -41,10 +41,9 @@ public class OrdersActivity extends ListActivity {
         ArrayList<Orders> orders = new ArrayList<>();
 
         while (cursor.moveToNext()) {
-
             int clientId = cursor.getInt(cursor.getColumnIndex("client_id"));
             int sellerID = cursor.getInt(cursor.getColumnIndex("seller_id"));
-            int productId = cursor.getInt(cursor.getColumnIndex("product_id"));
+            int productId = cursor.getInt(cursor.getColumnIndex("orders_product_id"));
             orders.add(new Orders(clientId, sellerID, productId));
         }
 
