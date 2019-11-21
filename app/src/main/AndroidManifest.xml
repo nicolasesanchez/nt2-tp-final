@@ -19,6 +19,7 @@
         </activity>
         <activity android:name=".ProductsActivity"></activity>
         <activity android:name=".ClientActivity"></activity>
+        <activity android:name=".NewOrderActivity"></activity>
 
         <provider
             android:name="android.support.v4.content.FileProvider"

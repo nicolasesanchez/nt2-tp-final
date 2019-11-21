@@ -1,11 +1,15 @@
 package ort.nt2.tpfinal;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import ort.nt2.tpfinal.adapters.OdersAdapter;
@@ -27,6 +31,14 @@ public class OrdersActivity extends ListActivity {
 
         ordersAdapter = new OdersAdapter(this, movesOrderList);
         listView.setAdapter(ordersAdapter);
+
+        Button newOrderBtn = (Button) findViewById(R.id.new_order_btn);
+        newOrderBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(OrdersActivity.this, NewOrderActivity.class));
+            }
+        });
     }
 
     private List<Orders> getOrders() {
