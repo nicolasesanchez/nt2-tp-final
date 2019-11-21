@@ -4,11 +4,21 @@
     <string name="clients">Clients</string>
     <string name="new_client">Add new Client</string>
 
+    <string name="new_order">Add new Order</string>
+
     <string name="products">Products</string>
 
     <string name="profile">Profile</string>
 
     <string name="orders">Orders</string>
+
+    <string name="client">Cliente</string>
+
+    <string name="client_Name">Nombre Cliente</string>
+
+    <string name="product">Producto</string>
+
+    <string name="load">Cargar</string>
 
     <string name="listaOrders">Ordenes disponibles</string>
 
@@ -24,4 +34,5 @@
     <string name="saveButton">Save</string>
     <string name="zone">Zone</string>
     <string name="address">Address</string>
+
 </resources>
