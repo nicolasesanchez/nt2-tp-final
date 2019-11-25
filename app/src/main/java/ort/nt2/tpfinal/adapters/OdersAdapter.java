@@ -13,14 +13,14 @@ import android.widget.TextView;
 import java.util.List;
 
 import ort.nt2.tpfinal.R;
-import ort.nt2.tpfinal.entities.Orders;
+import ort.nt2.tpfinal.entities.Order;
 
-public class OdersAdapter extends ArrayAdapter<Orders> {
+public class OdersAdapter extends ArrayAdapter<Order> {
 
     private Context mContext;
-    private List<Orders> orderList;
+    private List<Order> orderList;
 
-    public OdersAdapter(@NonNull Context context, @LayoutRes List<Orders> list) {
+    public OdersAdapter(@NonNull Context context, @LayoutRes List<Order> list) {
         super(context, 0, list);
         mContext = context;
         orderList = list;
@@ -36,7 +36,7 @@ public class OdersAdapter extends ArrayAdapter<Orders> {
 
         // TODO revisar porque no pasa por acá
 
-        Orders currentOrder = orderList.get(i);
+        Order currentOrder = orderList.get(i);
 
 //        TextView pedidoHecho = (TextView) view.findViewById(R.id.pedidoHechoDefault);
         TextView idCliente = (TextView) view.findViewById(R.id.IdCliente);

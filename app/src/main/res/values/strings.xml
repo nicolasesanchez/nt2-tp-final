@@ -5,6 +5,7 @@
     <string name="new_client">Add new Client</string>
 
     <string name="new_order">Add new Order</string>
+    <string name="new_order_title">New Order</string>
 
     <string name="products">Products</string>
 
@@ -15,8 +16,6 @@
     <string name="client">Cliente</string>
 
     <string name="client_Name">Nombre Cliente</string>
-
-    <string name="product">Producto</string>
 
     <string name="load">Cargar</string>
 
@@ -31,7 +30,9 @@
     <string name="crearOrden"> Crear Orden </string>
 
     <string name="name">Name and surname</string>
-    <string name="saveButton">Save</string>
+
+    <string name="submit">Submit</string>
+
     <string name="zone">Zone</string>
     <string name="address">Address</string>
 

@@ -36,7 +36,7 @@ public class ClientActivity extends ListActivity {
     }
 
     private List<Client> getClients() {
-        Cursor cursor = SQLiteHelper.getInstance(this).getReadableDatabase().rawQuery("select dni, name, last_name from client", new String[]{});
+        Cursor cursor = SQLiteHelper.executeQuery(this, "select dni, name, last_name from client");
 
         ArrayList<Client> clients = new ArrayList<>();
 

@@ -9,11 +9,10 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import ort.nt2.tpfinal.adapters.OdersAdapter;
-import ort.nt2.tpfinal.entities.Orders;
+import ort.nt2.tpfinal.entities.Order;
 import ort.nt2.tpfinal.sql.SQLiteHelper;
 
 public class OrdersActivity extends ListActivity {
@@ -27,7 +26,7 @@ public class OrdersActivity extends ListActivity {
         setContentView(R.layout.orders_list);
 
         listView = (ListView) findViewById(android.R.id.list);
-        List<Orders> movesOrderList = getOrders();
+        List<Order> movesOrderList = getOrders();
 
         ordersAdapter = new OdersAdapter(this, movesOrderList);
         listView.setAdapter(ordersAdapter);
@@ -41,16 +40,15 @@ public class OrdersActivity extends ListActivity {
         });
     }
 
-    private List<Orders> getOrders() {
+    private List<Order> getOrders() {
         Cursor cursor = SQLiteHelper.getInstance(this).getReadableDatabase().rawQuery("select * from Orders", new String[]{});
 
-        ArrayList<Orders> orders = new ArrayList<>();
+        ArrayList<Order> orders = new ArrayList<>();
 
         while (cursor.moveToNext()) {
             int clientId = cursor.getInt(cursor.getColumnIndex("client_id"));
             int sellerID = cursor.getInt(cursor.getColumnIndex("seller_id"));
-            int productId = cursor.getInt(cursor.getColumnIndex("orders_product_id"));
-            orders.add(new Orders(clientId, sellerID, productId));
+            orders.add(new Order(clientId, sellerID));
         }
 
         return orders;
