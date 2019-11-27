@@ -20,6 +20,14 @@
 
     <string name="crearOrden"> Crear Orden </string>
 
+    <string name="numeroOrden"> Numero de Orden </string>
+
+    <string name="nombreCliente"> Nombre Cliente Orden </string>
+
+    <string name="cantidayproductodOrden"> Cantidad y producto</string>
+
+
+
     <string name="name">Name and surname</string>
     <string name="saveButton">Save</string>
     <string name="zone">Zone</string>

@@ -1,8 +1,11 @@
 package ort.nt2.tpfinal;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -16,6 +19,7 @@ public class OrdersActivity extends ListActivity {
 
     private ListView listView;
     private OdersAdapter ordersAdapter;
+    private Button verdetalle;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -27,6 +31,25 @@ public class OrdersActivity extends ListActivity {
 
         ordersAdapter = new OdersAdapter(this, movesOrderList);
         listView.setAdapter(ordersAdapter);
+
+        //obtener id del pedido, no esta en el adapter.
+
+        //boton ver, deberia cargar en los campos textview los valores correspondientes al id del producto.
+
+        Button btn = (Button) findViewById(R.id.buttonVer);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setContentView(R.layout.detalle_orders);
+
+                //buscar de la listview el id de la orden
+
+                /*
+                Orders itemListView = listView.getAdapter().;
+                */
+
+            }
+        });
     }
 
     private List<Orders> getOrders() {
