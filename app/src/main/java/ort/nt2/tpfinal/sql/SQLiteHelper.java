@@ -143,6 +143,11 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         }
     }
 
+    public static void createNewClient(String name, String lastName, int dni) {
+        SQLiteDatabase writer = getInstance(ContextApp.getContext()).getWritableDatabase();
+        writer.execSQL(String.format("insert into client (name, last_name, dni) values ('%s', '%s', %d)", name, lastName, dni));
+    }
+
     public static Cursor executeQuery(Context context, String query) {
         return getInstance(context).getReadableDatabase().rawQuery(query, new String[]{});
     }

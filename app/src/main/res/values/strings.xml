@@ -3,6 +3,10 @@
 
     <string name="clients">Clients</string>
     <string name="new_client">Add new Client</string>
+    <string name="new_client_title">New Client</string>
+    <string name="new_client_hint_name">name</string>
+    <string name="new_client_hint_last_name">last name</string>
+    <string name="new_client_hint_dni">dni</string>
 
     <string name="new_order">Add new Order</string>
     <string name="new_order_title">New Order</string>

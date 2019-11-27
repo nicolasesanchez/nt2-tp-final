@@ -44,7 +44,6 @@ public class NewOrderActivity extends AppCompatActivity {
             CheckBox checkBox = new CheckBox(this);
             checkBox.setText(String.format("%s [s:%d, p:$%.2f]", product.getName(), product.getStock(), product.getPrice()));
             checkBox.setLayoutParams(Utils.getWrapContent());
-//            checkBox.setGravity(Gravity.END | Gravity.LEFT);
 
             productQty = new EditText(this);
             productQty.setLayoutParams(Utils.getWrapContent());
