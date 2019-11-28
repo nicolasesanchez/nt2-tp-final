@@ -177,22 +177,6 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         return p;
     }
 
-    public static Client getClientById(int id) {
-        Client client = null;
-
-        Cursor cursor = executeQuery(ContextApp.getContext(), String.format("select * from client where id = '%d'", id));
-
-        while (cursor.moveToNext()) {
-            client = new Client(
-                    cursor.getInt(getColumn(cursor, "dni")),
-                    cursor.getString(getColumn(cursor, "name")),
-                    cursor.getString(getColumn(cursor, "last_name"))
-            );
-        }
-
-        return client;
-    }
-
     public static List<Orders_product> getProductsForOrder(int orderId) {
         Cursor cursor = executeQuery(ContextApp.getContext(), "select * from orders_product where orders_id = " + orderId);
 

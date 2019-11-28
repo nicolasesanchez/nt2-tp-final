@@ -11,14 +11,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 
 import ort.nt2.tpfinal.OrderDetailActivity;
-import ort.nt2.tpfinal.OrdersActivity;
 import ort.nt2.tpfinal.R;
+import ort.nt2.tpfinal.entities.Client;
 import ort.nt2.tpfinal.entities.Order;
+import ort.nt2.tpfinal.services.ClientsService;
+import ort.nt2.tpfinal.sql.SQLiteHelper;
 
 public class OdersAdapter extends ArrayAdapter<Order> {
 
@@ -40,9 +41,10 @@ public class OdersAdapter extends ArrayAdapter<Order> {
             view = LayoutInflater.from(mContext).inflate(R.layout.ordersitmelist, viewGroup, false);
 
         final Order currentOrder = orderList.get(i);
+        Client client = ClientsService.getClientById(currentOrder.getClientId());
 
         TextView idCliente = (TextView) view.findViewById(R.id.IdCliente);
-        idCliente.setText(String.valueOf(currentOrder.getClient_id()));
+        idCliente.setText(String.format("%d. %s %s", client.getId(), client.getName(), client.getLastName()));
 
         view.findViewById(R.id.buttonVer).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,7 +52,7 @@ public class OdersAdapter extends ArrayAdapter<Order> {
                 Intent intent = new Intent(mContext, OrderDetailActivity.class);
                 Bundle b = new Bundle();
                 b.putInt("id", currentOrder.getId()); //Your id
-                b.putInt("clientId", currentOrder.getClient_id());
+                b.putInt("clientId", currentOrder.getClientId());
                 intent.putExtras(b); //Put your id to your next Intent
                 mContext.startActivity(intent);
             }

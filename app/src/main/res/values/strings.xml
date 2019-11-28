@@ -16,6 +16,7 @@
     <string name="profile">Profile</string>
 
     <string name="orders">Orders</string>
+    <string name="order_row_detail_button">Details</string>
 
     <string name="client">Cliente</string>
 
@@ -25,11 +26,8 @@
 
     <string name="listaOrders">Ordenes disponibles</string>
 
-    <string name="pedidoHechoDefault"> Pedido Hecho Para</string>
-
     <string name="nombreCliente">Nombre Cliente</string>
 
-    <string name="botonVerPedido"> Ver </string>
 
     <string name="crearOrden"> Crear Orden </string>
 

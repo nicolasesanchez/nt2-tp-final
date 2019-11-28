@@ -22,6 +22,13 @@ public class Client {
         return lastName;
     }
 
+    public Client(int id, int dni, String name, String lastName) {
+        this.id = id;
+        this.personalId = dni;
+        this.name = name;
+        this.lastName = lastName;
+    }
+
     public Client(int dni, String name, String lastName) {
         this.personalId = dni;
         this.name = name;

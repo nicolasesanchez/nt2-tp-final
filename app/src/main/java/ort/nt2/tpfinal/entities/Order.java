@@ -17,7 +17,7 @@ public class Order {
         this.setSeller_id(seller_id);
     }
 
-    public int getClient_id() {
+    public int getClientId() {
         return client_id;
     }
 

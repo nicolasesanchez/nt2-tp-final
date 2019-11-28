@@ -14,6 +14,7 @@ import java.util.List;
 import ort.nt2.tpfinal.entities.Client;
 import ort.nt2.tpfinal.entities.Orders_product;
 import ort.nt2.tpfinal.entities.Product;
+import ort.nt2.tpfinal.services.ClientsService;
 import ort.nt2.tpfinal.sql.SQLiteHelper;
 import ort.nt2.tpfinal.util.Utils;
 
@@ -34,7 +35,7 @@ public class OrderDetailActivity extends AppCompatActivity {
             orderId = b.getInt("id");
         }
 
-        Client client = SQLiteHelper.getClientById(clientId);
+        Client client = ClientsService.getClientById(clientId);
 
         TextView titleTextView = findViewById(R.id.order_detail_header);
         titleTextView.setText(String.format(TITLE_TEMPLATE, orderId, client.getName(), client.getLastName()));
