@@ -5,7 +5,14 @@ public class Order {
     private int client_id;
     private int seller_id;
 
-    public Order(int client_id, int seller_id) {
+    public int getId() {
+        return id;
+    }
+
+    private int id;
+
+    public Order(int id, int client_id, int seller_id) {
+        this.id = id;
         this.setClient_id(client_id);
         this.setSeller_id(seller_id);
     }

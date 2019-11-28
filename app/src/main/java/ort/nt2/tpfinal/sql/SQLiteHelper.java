@@ -6,10 +6,14 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.support.annotation.Nullable;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import ort.nt2.tpfinal.ContextApp;
 import ort.nt2.tpfinal.NewOrderActivity;
+import ort.nt2.tpfinal.entities.Client;
+import ort.nt2.tpfinal.entities.Orders_product;
+import ort.nt2.tpfinal.entities.Product;
 import ort.nt2.tpfinal.services.ProductsService;
 
 
@@ -125,9 +129,8 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
     public static void createNewOrder(int clientId, List<NewOrderActivity.RowProduct> products) {
         SQLiteDatabase writer = getInstance(ContextApp.getContext()).getWritableDatabase();
-        SQLiteDatabase reader = getInstance(ContextApp.getContext()).getReadableDatabase();
 
-        Cursor cursorW = writer.rawQuery(String.format(NEW_ORDER_QUERY, clientId), new String[]{});
+        Cursor cursorW = writer.rawQuery(String.format(NEW_ORDER_QUERY, getClientIdByPersonalId(clientId)), new String[]{});
 
         int newOrderId = -1;
 
@@ -143,9 +146,66 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         }
     }
 
+    private static int getClientIdByPersonalId(int personalId) {
+        Cursor cursor = executeQuery(ContextApp.getContext(), String.format("select id from client where dni = %d", personalId));
+
+        int id = 0;
+        while (cursor.moveToNext()) {
+            id = cursor.getInt(getColumn(cursor, "id"));
+        }
+
+        return id;
+    }
+
     public static void createNewClient(String name, String lastName, int dni) {
         SQLiteDatabase writer = getInstance(ContextApp.getContext()).getWritableDatabase();
         writer.execSQL(String.format("insert into client (name, last_name, dni) values ('%s', '%s', %d)", name, lastName, dni));
+    }
+
+    public static Product getProductById(int productId) {
+        Cursor cursor = executeQuery(ContextApp.getContext(), String.format("select * from product where id = %d", productId));
+        Product p = null;
+
+        while (cursor.moveToNext()) {
+            p = new Product(
+                    cursor.getString(getColumn(cursor, "name")),
+                    cursor.getFloat(getColumn(cursor, "price"))
+            );
+        }
+
+        return p;
+    }
+
+    public static Client getClientById(int id) {
+        Client client = null;
+
+        Cursor cursor = executeQuery(ContextApp.getContext(), String.format("select * from client where id = '%d'", id));
+
+        while (cursor.moveToNext()) {
+            client = new Client(
+                    cursor.getInt(getColumn(cursor, "dni")),
+                    cursor.getString(getColumn(cursor, "name")),
+                    cursor.getString(getColumn(cursor, "last_name"))
+            );
+        }
+
+        return client;
+    }
+
+    public static List<Orders_product> getProductsForOrder(int orderId) {
+        Cursor cursor = executeQuery(ContextApp.getContext(), "select * from orders_product where orders_id = " + orderId);
+
+        ArrayList<Orders_product> items = new ArrayList<>();
+
+        while (cursor.moveToNext()) {
+            items.add(new Orders_product(
+                    cursor.getInt(getColumn(cursor, "quantity")),
+                    orderId,
+                    cursor.getInt(getColumn(cursor, "product_id"))
+            ));
+        }
+
+        return items;
     }
 
     public static Cursor executeQuery(Context context, String query) {

@@ -46,9 +46,10 @@ public class OrdersActivity extends ListActivity {
         ArrayList<Order> orders = new ArrayList<>();
 
         while (cursor.moveToNext()) {
+            int id = cursor.getInt(cursor.getColumnIndex("id"));
             int clientId = cursor.getInt(cursor.getColumnIndex("client_id"));
             int sellerID = cursor.getInt(cursor.getColumnIndex("seller_id"));
-            orders.add(new Order(clientId, sellerID));
+            orders.add(new Order(id, clientId, sellerID));
         }
 
         return orders;
