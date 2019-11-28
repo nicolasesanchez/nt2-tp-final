@@ -130,11 +130,12 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     public static void createNewOrder(int clientId, List<NewOrderActivity.RowProduct> products) {
         SQLiteDatabase writer = getInstance(ContextApp.getContext()).getWritableDatabase();
 
-        Cursor cursorW = writer.rawQuery(String.format(NEW_ORDER_QUERY, getClientIdByPersonalId(clientId)), new String[]{});
+        writer.execSQL(String.format(NEW_ORDER_QUERY, getClientIdByPersonalId(clientId)));
+        Cursor cursor = writer.rawQuery("SELECT id FROM orders ORDER BY id DESC LIMIT 1", new String[]{});
 
         int newOrderId = -1;
 
-        while (cursorW.moveToNext()) newOrderId = getColumn(cursorW, "id");
+        while (cursor.moveToNext()) newOrderId = cursor.getInt(cursor.getColumnIndex("id"));
 
         for (NewOrderActivity.RowProduct p : products) {
             int productId = p.product.getId();
