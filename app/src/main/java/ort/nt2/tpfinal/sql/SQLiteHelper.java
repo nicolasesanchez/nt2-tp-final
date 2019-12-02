@@ -206,7 +206,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     }
 
     private static int resolveNewQty(int qtyRequested, String checkBox) {
-        return qtyRequested - Integer.valueOf(checkBox.substring(checkBox.indexOf("s:"), checkBox.indexOf(",")).replace("s:", ""));
+        return Integer.valueOf(checkBox.substring(checkBox.indexOf("s:"), checkBox.indexOf(",")).replace("s:", "")) - qtyRequested;
     }
 
 }
