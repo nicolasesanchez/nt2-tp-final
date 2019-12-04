@@ -16,6 +16,8 @@ import java.util.List;
 import ort.nt2.tpfinal.R;
 import ort.nt2.tpfinal.entities.Client;
 
+import static ort.nt2.tpfinal.util.Utils.parsePersonalId;
+
 public class ClientAdapter extends ArrayAdapter<Client> {
     private Context context;
     private List<Client> clientsList;
@@ -44,11 +46,6 @@ public class ClientAdapter extends ArrayAdapter<Client> {
         clientPersonalId.setPadding(0, 5, 5, 15);
 
         return clientsList;
-    }
-
-    private String parsePersonalId(int dni) {
-        String dniString = String.valueOf(dni);
-        return String.format("%s.%s.%s", dniString.substring(0,2), dniString.substring(2, 5), dniString.substring(5, 8));
     }
 
 }

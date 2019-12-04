@@ -98,7 +98,7 @@ public class ProfileActivity extends AppCompatActivity {
         ed.putString("email", etEmail.getText().toString());
         ed.putString("address", etAddress.getText().toString());
         ed.putString("birthday", etBirthDate.getText().toString());
-        ed.putString("image", encodeTobase64(profilePicture));
+        if (profilePicture != null) ed.putString("image", encodeTobase64(profilePicture));
 
         ed.apply();
 

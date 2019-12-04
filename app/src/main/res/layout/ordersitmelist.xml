@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+<<<<<<< HEAD
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+=======
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+>>>>>>> b84bea19ebbd0804cf80fdb134042f325509fd77
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -18,12 +24,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> b84bea19ebbd0804cf80fdb134042f325509fd77
         <LinearLayout
             android:layout_width="265dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+<<<<<<< HEAD
 
             android:orientation="vertical">
 
@@ -38,6 +48,11 @@
                 android:textStyle="bold" />
 
             <TextView
+=======
+            android:orientation="vertical">
+
+            <TextView
+>>>>>>> b84bea19ebbd0804cf80fdb134042f325509fd77
                 android:id="@+id/IdCliente"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -47,10 +62,17 @@
         <Button
             android:id="@+id/buttonVer"
             android:layout_width="match_parent"
+<<<<<<< HEAD
             android:layout_height="wrap_content"
             android:text="@string/botonVerPedido"
             android:background="@color/botonOrders"
             android:textColor="@color/orders"/>
+=======
+            android:layout_height="match_parent"
+            android:background="@color/botonOrders"
+            android:text="@string/order_row_detail_button"
+            android:textColor="@color/orders" />
+>>>>>>> b84bea19ebbd0804cf80fdb134042f325509fd77
 
     </LinearLayout>
 

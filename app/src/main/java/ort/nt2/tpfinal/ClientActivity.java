@@ -1,9 +1,12 @@
 package ort.nt2.tpfinal;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -28,15 +31,17 @@ public class ClientActivity extends ListActivity {
         clientAdapter = new ClientAdapter(this, clients);
         clientsList.setAdapter(clientAdapter);
 
-
-        /*FragmentManager fm = getSupportFragmentManager();
-        ClientModal editNameDialogFragment = new ClientModal();
-        editNameDialogFragment.show(fm, "fragment_edit_name");*/
-
+        Button newClientBtn = (Button) findViewById(R.id.client_btn_new);
+        newClientBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ClientActivity.this, NewClientsActivity.class));
+            }
+        });
     }
 
     private List<Client> getClients() {
-        Cursor cursor = SQLiteHelper.getInstance(this).getReadableDatabase().rawQuery("select dni, name, last_name from client", new String[]{});
+        Cursor cursor = SQLiteHelper.executeQuery(this, "select dni, name, last_name from client");
 
         ArrayList<Client> clients = new ArrayList<>();
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< HEAD
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -11,9 +12,36 @@
         android:textColor="@color/botonOrders"/>
 
     -->
+=======
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/pedidoHechoDefault"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:text="@string/orders"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+>>>>>>> b84bea19ebbd0804cf80fdb134042f325509fd77
     <ListView
         android:id="@android:id/list"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" />
 
+<<<<<<< HEAD
+=======
+    <Button
+        android:id="@+id/new_order_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:width="170dp"
+        android:text="@string/new_order" />
+
+>>>>>>> b84bea19ebbd0804cf80fdb134042f325509fd77
 </LinearLayout>

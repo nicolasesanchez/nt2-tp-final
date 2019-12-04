@@ -3,12 +3,20 @@
 
     <string name="clients">Clients</string>
     <string name="new_client">Add new Client</string>
+    <string name="new_client_title">New Client</string>
+    <string name="new_client_hint_name">name</string>
+    <string name="new_client_hint_last_name">last name</string>
+    <string name="new_client_hint_dni">dni</string>
+
+    <string name="new_order">Add new Order</string>
+    <string name="new_order_title">New Order</string>
 
     <string name="products">Products</string>
 
     <string name="profile">Profile</string>
 
     <string name="orders">Orders</string>
+<<<<<<< HEAD
 
     <string name="listaOrders">Ordenes disponibles</string>
 
@@ -27,9 +35,28 @@
     <string name="cantidayproductodOrden"> Cantidad y producto</string>
 
 
+=======
+    <string name="order_row_detail_button">Details</string>
+
+    <string name="client">Cliente</string>
+
+    <string name="client_Name">Nombre Cliente</string>
+
+    <string name="load">Cargar</string>
+
+    <string name="listaOrders">Ordenes disponibles</string>
+
+    <string name="nombreCliente">Nombre Cliente</string>
+
+
+    <string name="crearOrden"> Crear Orden </string>
+>>>>>>> b84bea19ebbd0804cf80fdb134042f325509fd77
 
     <string name="name">Name and surname</string>
-    <string name="saveButton">Save</string>
+
+    <string name="submit">Submit</string>
+
     <string name="zone">Zone</string>
     <string name="address">Address</string>
+
 </resources>

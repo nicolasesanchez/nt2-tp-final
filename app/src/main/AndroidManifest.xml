@@ -3,6 +3,8 @@
     package="ort.nt2.tpfinal">
 
     <application
+        android:name="ort.nt2.tpfinal.ContextApp"
+
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -19,6 +21,9 @@
         </activity>
         <activity android:name=".ProductsActivity"></activity>
         <activity android:name=".ClientActivity"></activity>
+        <activity android:name=".NewOrderActivity"></activity>
+        <activity android:name=".NewClientsActivity"></activity>
+        <activity android:name=".OrderDetailActivity"></activity>
 
         <provider
             android:name="android.support.v4.content.FileProvider"
